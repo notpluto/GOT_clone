@@ -1,0 +1,239 @@
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/**/
+
+$font-primary: 'Marck Script', cursive;
+$font-secondary: 'Roboto Mono', monospace;
+$primary-color: #fff; /*white*/
+$secondary-color: #0E0E0E; /* shade of black */
+
+%wrapper{
+	max-width: 1100px;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+%standard-grid{
+	display: grid;
+	grid-template-columns: 344px 344px 344px;
+	grid-column-gap: 3rem;
+}
+%heading-three{
+	font-family: $font-primary;
+	color: $primary-color;
+	font-size: 3rem;
+	margin: 4rem;
+	text-transform: capitalize;
+}
+%arrow{
+	color: $primary-color;
+	font-size: 3rem;
+	position: absolute;
+}
+
+body{
+	background: $secondary-color;
+	user-select: none;
+	header{
+		.wrapper{
+			@extend %wrapper;
+		}
+		h2{
+			color: $primary-color;
+			font-size: 4rem;
+			font-family: $font-primary;
+			text-transform: capitalize;
+			margin: 3rem;
+		}
+		.btn{
+			color: $primary-color;
+			background: #111111;
+			font-size: 1rem;
+			height: 2.8rem;
+			width: 10rem;
+			outline: 0;
+			border: 0;
+			padding: 10px;
+			font-weight: 400;
+			margin: 10px;
+			letter-spacing: 1px;
+			font-family: $font-secondary;
+			cursor: pointer;
+			border-radius: 6px;
+		}
+		.hero-img{
+			object-fit: contain;
+			box-shadow: 0 0 80px 4px #95908A;
+		}
+		.btn-pos{
+			position: absolute;
+			left: 40px;
+			top: 50%;
+		}
+		.btn-pos-2{
+			position: absolute;
+			right: 40px;
+			top: 50%;
+			background: #141414;
+		}
+		.btn-pos span,
+		.btn-pos-2 span {
+	  	display: inline-block;
+	  	position: relative;
+	  	transition: 0.5s;
+			}
+		.btn-pos span:after,
+		.btn-pos-2 span:after {
+		  content: '\00bb';
+		  position: absolute;
+		  opacity: 0;
+		  top: 0;
+		  right: 20px;
+		  transition: 0.5s;
+			}
+		.btn-pos:hover span,
+		.btn-pos-2:hover span {
+			padding-right: 25px;
+		}
+		.btn-pos:hover span:after,
+		.btn-pos-2:hover span:after {
+		  opacity: 1;
+		  right: 0;
+		}
+	}
+	.character{
+		.wrapper-2{
+			@extend %wrapper;
+		}
+		h3{
+			@extend %heading-three;
+			}
+		.character-grid{
+			@extend %standard-grid;
+		}
+		.character-image{
+			border-radius: 6px;
+			border: 1px solid #fff;
+		}
+		.side-arrow{
+			@extend %arrow;
+			right: -120px;
+    	top: 50%;
+		}
+		.return{
+			@extend %arrow;
+			left: -140px;
+      bottom: -140px;
+		}
+		}
+	.houses{
+		.wrapper-3{
+		@extend %wrapper;
+		}
+		h3{
+			@extend %heading-three;
+		}
+		.character-grid{
+			@extend %standard-grid;
+		}
+		.character-image{
+			border-radius: 6px;
+			border: 1px solid #fff;
+		}
+		.side-arrow{
+			color: $primary-color;
+			font-size: 3rem;
+			position: absolute;
+			right: -120px;
+    	top: 50%;
+		}
+		.return, .forward{
+			@extend %arrow;
+			left: -140px;
+      bottom: -140px;
+		}
+	}
+	.wrapper-4{
+		@extend %wrapper;
+	}
+	.character-card{
+		// display: flex;
+		background: #fff;
+		margin: 4rem;	
+		border-radius: 6px;
+	}
+	.enclose{
+		display: flex;
+		height: 480px;
+	}
+	.card-image img{
+		height: 100%;
+		object-fit: cover;
+		box-shadow: inset 0 0 6px 6px black;
+	}
+	.card-content{
+		height: 480px;
+		margin: 20px;
+		color: $secondary-color;
+		font-size: 1.1rem;
+		text-align: left;
+		letter-spacing: 1px;
+		line-height: 1.2;
+	}
+	.card-content > span {
+		display: block;
+		padding: 10px;
+	}
+}
+
+
