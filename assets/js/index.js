@@ -77,6 +77,7 @@ function goBack(e){
 	}
 }
 
+// To display character cards
 function charCard3(e){
 	if(e.target.classList.contains('char-three')){
 		document.body.querySelector('.wrapper-2').innerHTML = "";
